@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tvFeeds = new System.Windows.Forms.TreeView();
@@ -36,7 +37,8 @@
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feedsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.filtrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnAtualiza = new System.Windows.Forms.Button();
             this.itemtituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemconteudoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemdthrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +47,13 @@
             this.itemcodigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemurlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,16 +74,26 @@
             this.itemurlDataGridViewTextBoxColumn,
             this.feedDataGridViewTextBoxColumn});
             this.dgvItens.DataSource = this.itemBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItens.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItens.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvItens.Location = new System.Drawing.Point(195, 24);
+            this.dgvItens.Location = new System.Drawing.Point(0, 0);
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
             this.dgvItens.RowHeadersVisible = false;
-            this.dgvItens.Size = new System.Drawing.Size(962, 605);
+            this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItens.Size = new System.Drawing.Size(968, 605);
             this.dgvItens.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkGray;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manutençãoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -87,10 +104,15 @@
             // 
             // tvFeeds
             // 
-            this.tvFeeds.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tvFeeds.Location = new System.Drawing.Point(0, 24);
+            this.tvFeeds.BackColor = System.Drawing.Color.Black;
+            this.tvFeeds.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvFeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvFeeds.ForeColor = System.Drawing.Color.LightGray;
+            this.tvFeeds.HideSelection = false;
+            this.tvFeeds.Location = new System.Drawing.Point(0, 0);
+            this.tvFeeds.Margin = new System.Windows.Forms.Padding(10);
             this.tvFeeds.Name = "tvFeeds";
-            this.tvFeeds.Size = new System.Drawing.Size(195, 605);
+            this.tvFeeds.Size = new System.Drawing.Size(182, 605);
             this.tvFeeds.TabIndex = 2;
             // 
             // manutençãoToolStripMenuItem
@@ -106,24 +128,54 @@
             // categoriasToolStripMenuItem
             // 
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
             // 
             // feedsToolStripMenuItem
             // 
             this.feedsToolStripMenuItem.Name = "feedsToolStripMenuItem";
-            this.feedsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.feedsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.feedsToolStripMenuItem.Text = "Feeds";
             // 
             // filtrosToolStripMenuItem
             // 
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
-            this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.filtrosToolStripMenuItem.Text = "Filtros";
             // 
-            // itemBindingSource
+            // splitContainer1
             // 
-            this.itemBindingSource.DataSource = typeof(RSS_Form1.Modelos.Item);
+            this.splitContainer1.BackColor = System.Drawing.Color.DarkGray;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 24);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnAtualiza);
+            this.splitContainer1.Panel1.Controls.Add(this.tvFeeds);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvItens);
+            this.splitContainer1.Size = new System.Drawing.Size(1157, 605);
+            this.splitContainer1.SplitterDistance = 182;
+            this.splitContainer1.SplitterWidth = 7;
+            this.splitContainer1.TabIndex = 3;
+            // 
+            // btnAtualiza
+            // 
+            this.btnAtualiza.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAtualiza.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAtualiza.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnAtualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtualiza.Location = new System.Drawing.Point(0, 562);
+            this.btnAtualiza.Name = "btnAtualiza";
+            this.btnAtualiza.Size = new System.Drawing.Size(182, 43);
+            this.btnAtualiza.TabIndex = 3;
+            this.btnAtualiza.Text = "Atualizar";
+            this.btnAtualiza.UseVisualStyleBackColor = false;
+            this.btnAtualiza.Click += new System.EventHandler(this.btnAtualiza_Click);
             // 
             // itemtituloDataGridViewTextBoxColumn
             // 
@@ -151,12 +203,14 @@
             // 
             // itemlidoDataGridViewTextBoxColumn
             // 
+            this.itemlidoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.itemlidoDataGridViewTextBoxColumn.DataPropertyName = "item_lido";
             this.itemlidoDataGridViewTextBoxColumn.HeaderText = "Lido?";
             this.itemlidoDataGridViewTextBoxColumn.Name = "itemlidoDataGridViewTextBoxColumn";
             this.itemlidoDataGridViewTextBoxColumn.ReadOnly = true;
             this.itemlidoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.itemlidoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.itemlidoDataGridViewTextBoxColumn.Width = 58;
             // 
             // feedcodigoDataGridViewTextBoxColumn
             // 
@@ -190,13 +244,17 @@
             this.feedDataGridViewTextBoxColumn.ReadOnly = true;
             this.feedDataGridViewTextBoxColumn.Visible = false;
             // 
+            // itemBindingSource
+            // 
+            this.itemBindingSource.DataSource = typeof(RSS_Form1.Modelos.Item);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1157, 629);
-            this.Controls.Add(this.dgvItens);
-            this.Controls.Add(this.tvFeeds);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -206,6 +264,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,6 +292,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemcodigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemurlDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn feedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button btnAtualiza;
     }
 }
 

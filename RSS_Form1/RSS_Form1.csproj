@@ -53,6 +53,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleFeedReader, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleFeedReader.1.0.7\lib\net40-client\SimpleFeedReader.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -123,6 +126,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloRSS.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Documentation.chm" />
     <None Include="Modelos\ModeloRSS.edmx.diagram">
       <DependentUpon>ModeloRSS.edmx</DependentUpon>
     </None>
