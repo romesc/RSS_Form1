@@ -1,9 +1,9 @@
 ﻿using RSS_Form1.Classes;
+using RSS_Form1.FormsCadastro;
 using RSS_Form1.Modelos;
 using SimpleFeedReader;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -50,7 +50,7 @@ namespace RSS_Form1
         {
             string kCat = "";
             string kFeed = "";
-
+            
             var lCategorias = CategDados.getAll();
             var lFeeds = FeedDados.getAll();
             var lItens = ItemDados.retornaNaoLidos();
@@ -75,6 +75,23 @@ namespace RSS_Form1
         private void btnAtualiza_Click(object sender, EventArgs e)
         {
             CarregaFeeds();
+        }
+
+        private void feedsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormManutCategoria formManutCategoria = new FormManutCategoria();
+            formManutCategoria.ShowDialog();
+        }
+
+        private void regrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //FormManutCategoria formManutCategoria = new FormManutCategoria();
+            //formManutCategoria.ShowDialog();
         }
     }
 }
