@@ -44,18 +44,18 @@
             this.ttbDescricao = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ttbOrdem = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.catcodigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catdescricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catordemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ListaGategoriasBS = new System.Windows.Forms.BindingSource(this.components);
-            this.CategoriaBS = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCateg)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaGategoriasBS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoriaBS)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -180,6 +180,7 @@
             // 
             // BtnCancelar
             // 
+            this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnCancelar.Location = new System.Drawing.Point(271, 4);
             this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -204,7 +205,6 @@
             // 
             // ttbCodigo
             // 
-            this.ttbCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CategoriaBS, "cat_codigo", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.ttbCodigo.Enabled = false;
             this.ttbCodigo.Location = new System.Drawing.Point(24, 49);
             this.ttbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -232,7 +232,6 @@
             // 
             // ttbDescricao
             // 
-            this.ttbDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CategoriaBS, "cat_descricao", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.ttbDescricao.Enabled = false;
             this.ttbDescricao.Location = new System.Drawing.Point(112, 49);
             this.ttbDescricao.Margin = new System.Windows.Forms.Padding(4);
@@ -251,12 +250,11 @@
             // 
             // ttbOrdem
             // 
-            this.ttbOrdem.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CategoriaBS, "cat_ordem", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.ttbOrdem.Enabled = false;
             this.ttbOrdem.Location = new System.Drawing.Point(576, 49);
             this.ttbOrdem.Margin = new System.Windows.Forms.Padding(4);
             this.ttbOrdem.Name = "ttbOrdem";
-            this.ttbOrdem.Size = new System.Drawing.Size(54, 30);
+            this.ttbOrdem.Size = new System.Drawing.Size(73, 30);
             this.ttbOrdem.TabIndex = 4;
             // 
             // catcodigoDataGridViewTextBoxColumn
@@ -300,14 +298,12 @@
             // 
             this.ListaGategoriasBS.DataSource = typeof(RSS_Form1.Modelos.Categoria);
             // 
-            // CategoriaBS
-            // 
-            this.CategoriaBS.DataSource = typeof(RSS_Form1.Modelos.Categoria);
-            // 
             // FormManutCategoria
             // 
+            this.AcceptButton = this.BtnSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(897, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -322,8 +318,8 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaGategoriasBS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CategoriaBS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,12 +340,12 @@
         private System.Windows.Forms.Button BtnAlterar;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnSalvar;
-        private System.Windows.Forms.BindingSource CategoriaBS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox ttbDescricao;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox ttbCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ttbOrdem;
+        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }

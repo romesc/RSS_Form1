@@ -14,6 +14,8 @@ namespace RSS_Form1.FormsCadastro
 {
     public partial class FormManutCategoria : Form
     {
+        private static Categoria oCatTela = new Categoria();
+
         public FormManutCategoria()
         {
             InitializeComponent();
@@ -21,8 +23,12 @@ namespace RSS_Form1.FormsCadastro
 
         private void BtnIncluir_Click(object sender, EventArgs e)
         {
-            CategoriaBS.Clear();
-            CategoriaBS.AddNew();
+            oCatTela = null;
+            ttbCodigo.Clear();
+            ttbDescricao.Clear();
+            ttbOrdem.Clear();
+            //CategoriaBS.Clear();
+            //CategoriaBS.AddNew();
 
             Modo("edicao");
         }
@@ -70,16 +76,34 @@ namespace RSS_Form1.FormsCadastro
 
         private void BtnSalvar_Click(object sender, EventArgs e)
         {
-            CategoriaBS.EndEdit();
-            CategDados.Insert((Categoria)CategoriaBS.Current);
+            if (oCatTela == null) // inclusão
+            {
+                oCatTela = new Categoria
+                {
+                    cat_descricao = ttbDescricao.Text,
+                    cat_ordem = int.Parse(ttbOrdem.Text)
+                };
+
+                CategDados.Insert(oCatTela);
+            }
+            else // edição
+            {
+                oCatTela.cat_descricao = ttbDescricao.Text;
+                oCatTela.cat_ordem = int.Parse(ttbOrdem.Text);
+
+                CategDados.Gravar(oCatTela);
+            }
+
+            ListaGategoriasBS.Clear();
+            ListaGategoriasBS.DataSource = CategDados.getAll();
 
             Modo("visualizacao");
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            CategoriaBS.CancelEdit();
-            CategoriaBS.DataSource = (Categoria)dgvCateg.CurrentRow.DataBoundItem;
+            //CategoriaBS.CancelEdit();
+            //CategoriaBS.DataSource = (Categoria)dgvCateg.CurrentRow.DataBoundItem;
 
             Modo("visualizacao");
         }
@@ -101,7 +125,12 @@ namespace RSS_Form1.FormsCadastro
         {
             if (dgvCateg.CurrentRow != null)
             {
-                CategoriaBS.DataSource = (Categoria)dgvCateg.CurrentRow.DataBoundItem;
+                oCatTela = (Categoria)dgvCateg.CurrentRow.DataBoundItem;
+                ttbCodigo.Text = oCatTela.cat_codigo.ToString();
+                ttbDescricao.Text = oCatTela.cat_descricao;
+                ttbOrdem.Text = oCatTela.cat_ordem.ToString();
+
+                //CategoriaBS.DataSource = (Categoria)dgvCateg.CurrentRow.DataBoundItem;
 
                 Modo("visualizacao");
             }

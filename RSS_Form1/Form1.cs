@@ -48,6 +48,8 @@ namespace RSS_Form1
 
         private void CarregaCategorias()
         {
+            tvFeeds.Nodes.Clear();
+
             string kCat = "";
             string kFeed = "";
             
@@ -86,6 +88,8 @@ namespace RSS_Form1
         {
             FormManutCategoria formManutCategoria = new FormManutCategoria();
             formManutCategoria.ShowDialog();
+
+            CarregaCategorias();
         }
 
         private void regrasToolStripMenuItem_Click(object sender, EventArgs e)
