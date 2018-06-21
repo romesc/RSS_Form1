@@ -42,9 +42,6 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.ttbCodigo = new System.Windows.Forms.TextBox();
             this.dgvFeeds = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.ListaFeedsBS = new System.Windows.Forms.BindingSource(this.components);
             this.feedcodigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feeddescricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedsiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +51,23 @@
             this.feedordemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ListaFeedsBS = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbbCateg = new System.Windows.Forms.ComboBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.ttbnURL = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ttbSite = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeeds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaFeedsBS)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFeedsBS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnIncluir
@@ -153,7 +162,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(571, 20);
+            this.label2.Location = new System.Drawing.Point(728, 67);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 25);
             this.label2.TabIndex = 5;
@@ -162,7 +172,7 @@
             // ttbOrdem
             // 
             this.ttbOrdem.Enabled = false;
-            this.ttbOrdem.Location = new System.Drawing.Point(576, 49);
+            this.ttbOrdem.Location = new System.Drawing.Point(810, 62);
             this.ttbOrdem.Margin = new System.Windows.Forms.Padding(4);
             this.ttbOrdem.Name = "ttbOrdem";
             this.ttbOrdem.Size = new System.Drawing.Size(73, 30);
@@ -171,7 +181,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 20);
+            this.label1.Location = new System.Drawing.Point(247, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 25);
             this.label1.TabIndex = 3;
@@ -180,16 +191,17 @@
             // ttbDescricao
             // 
             this.ttbDescricao.Enabled = false;
-            this.ttbDescricao.Location = new System.Drawing.Point(112, 49);
+            this.ttbDescricao.Location = new System.Drawing.Point(356, 24);
             this.ttbDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.ttbDescricao.Name = "ttbDescricao";
-            this.ttbDescricao.Size = new System.Drawing.Size(456, 30);
+            this.ttbDescricao.Size = new System.Drawing.Size(527, 30);
             this.ttbDescricao.TabIndex = 2;
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(23, 20);
+            this.lblCodigo.Location = new System.Drawing.Point(41, 29);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(0);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(81, 25);
             this.lblCodigo.TabIndex = 1;
@@ -198,7 +210,7 @@
             // ttbCodigo
             // 
             this.ttbCodigo.Enabled = false;
-            this.ttbCodigo.Location = new System.Drawing.Point(24, 49);
+            this.ttbCodigo.Location = new System.Drawing.Point(126, 24);
             this.ttbCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.ttbCodigo.Name = "ttbCodigo";
             this.ttbCodigo.Size = new System.Drawing.Size(80, 30);
@@ -230,43 +242,9 @@
             this.dgvFeeds.ReadOnly = true;
             this.dgvFeeds.RowHeadersVisible = false;
             this.dgvFeeds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFeeds.Size = new System.Drawing.Size(924, 392);
+            this.dgvFeeds.Size = new System.Drawing.Size(924, 317);
             this.dgvFeeds.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dgvFeeds);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.panel1.Size = new System.Drawing.Size(950, 532);
-            this.panel1.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.ttbOrdem);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.ttbDescricao);
-            this.panel2.Controls.Add(this.lblCodigo);
-            this.panel2.Controls.Add(this.ttbCodigo);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(13, 404);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(20);
-            this.panel2.Size = new System.Drawing.Size(924, 116);
-            this.panel2.TabIndex = 1;
-            // 
-            // ListaFeedsBS
-            // 
-            this.ListaFeedsBS.DataSource = typeof(RSS_Form1.Modelos.Feed);
+            this.dgvFeeds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeed_CellClick);
             // 
             // feedcodigoDataGridViewTextBoxColumn
             // 
@@ -335,6 +313,119 @@
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
             // 
+            // ListaFeedsBS
+            // 
+            this.ListaFeedsBS.DataSource = typeof(RSS_Form1.Modelos.Feed);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvFeeds);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.panel1.Size = new System.Drawing.Size(950, 532);
+            this.panel1.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.cbbCateg);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.ttbnURL);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.ttbSite);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.ttbOrdem);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.ttbDescricao);
+            this.panel2.Controls.Add(this.lblCodigo);
+            this.panel2.Controls.Add(this.ttbCodigo);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(13, 329);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(20);
+            this.panel2.Size = new System.Drawing.Size(924, 191);
+            this.panel2.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 145);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 25);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Categoria:";
+            // 
+            // cbbCateg
+            // 
+            this.cbbCateg.DataSource = this.categoriaBindingSource;
+            this.cbbCateg.DisplayMember = "cat_descricao";
+            this.cbbCateg.Enabled = false;
+            this.cbbCateg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbbCateg.FormattingEnabled = true;
+            this.cbbCateg.Location = new System.Drawing.Point(126, 137);
+            this.cbbCateg.Name = "cbbCateg";
+            this.cbbCateg.Size = new System.Drawing.Size(236, 33);
+            this.cbbCateg.TabIndex = 10;
+            this.cbbCateg.ValueMember = "cat_codigo";
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataSource = typeof(RSS_Form1.Modelos.Categoria);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(66, 105);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 25);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "URL:";
+            // 
+            // ttbnURL
+            // 
+            this.ttbnURL.Enabled = false;
+            this.ttbnURL.Location = new System.Drawing.Point(126, 100);
+            this.ttbnURL.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbnURL.Name = "ttbnURL";
+            this.ttbnURL.Size = new System.Drawing.Size(757, 30);
+            this.ttbnURL.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(70, 67);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Site:";
+            // 
+            // ttbSite
+            // 
+            this.ttbSite.Enabled = false;
+            this.ttbSite.Location = new System.Drawing.Point(126, 62);
+            this.ttbSite.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbSite.Name = "ttbSite";
+            this.ttbSite.Size = new System.Drawing.Size(549, 30);
+            this.ttbSite.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Categoria";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Categoria";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // FormManutFeeds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,10 +438,11 @@
             this.Load += new System.EventHandler(this.FormManutFeed_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFeeds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListaFeedsBS)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListaFeedsBS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -381,5 +473,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn feedordemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbbCateg;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox ttbnURL;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox ttbSite;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

@@ -68,9 +68,36 @@ namespace RSS_Form1.Classes
             return resFeed;
         }
 
-        internal static void Gravar(Feed oFeedTela)
+        internal static int Gravar(Feed oFeed)
         {
-            throw new NotImplementedException();
+            int QtRes = -1;
+
+            using (var context = new bancoRSS())
+            {
+                Feed resFeed = context.Feeds.Find(oFeed.feed_codigo);
+
+                if (resFeed != null)
+                {
+                    try
+                    {
+                        if (!resFeed.feed_descricao.Equals(oFeed.feed_descricao))
+                            resFeed.feed_descricao = oFeed.feed_descricao;
+
+                        if (!resFeed.feed_ordem.Equals(oFeed.feed_ordem))
+                            resFeed.feed_ordem = oFeed.feed_ordem;
+
+                        var entry = context.Entry(resFeed);
+
+                        QtRes = context.SaveChanges();
+                    }
+                    catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+                    {
+
+                    }
+                }
+            }
+
+            return QtRes;
         }
     }
 }

@@ -109,7 +109,12 @@ namespace RSS_Form1.FormsCadastro
 
         private void FormManutFeed_Load(object sender, EventArgs e)
         {
+            categoriaBindingSource.DataSource = CategDados.getAll();
+
             ListaFeedsBS.DataSource = FeedDados.getAll();
+
+            if (ListaFeedsBS.Count > 0)
+                dgvFeeds.CurrentCell = dgvFeeds[0, 0];
 
             Modo("nada");
         }
@@ -122,6 +127,9 @@ namespace RSS_Form1.FormsCadastro
                 ttbCodigo.Text = oFeedTela.cat_codigo.ToString();
                 ttbDescricao.Text = oFeedTela.feed_descricao;
                 ttbOrdem.Text = oFeedTela.feed_ordem.ToString();
+                ttbSite.Text = oFeedTela.feed_site;
+                ttbnURL.Text = oFeedTela.feed_url;
+                cbbCateg.SelectedValue = oFeedTela.cat_codigo;
 
                 //CategoriaBS.DataSource = (Categoria)dgvCateg.CurrentRow.DataBoundItem;
 

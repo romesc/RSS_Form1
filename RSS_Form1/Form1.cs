@@ -24,7 +24,7 @@ namespace RSS_Form1
         private void CarregaFeeds()
         {
             var reader = new FeedReader();
-            var items = reader.RetrieveFeed("https://iplusall.com/feed/");
+            var items = reader.RetrieveFeed("https://stackoverflow.com/feeds/question/42210281");
 
             List<Item> oItens = new List<Item>();
 
@@ -99,6 +99,17 @@ namespace RSS_Form1
         {
             //FormManutCategoria formManutCategoria = new FormManutCategoria();
             //formManutCategoria.ShowDialog();
+        }
+
+        private void dgvItens_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvItens.CurrentRow != null)
+            {
+                Item oItem = (Item)dgvItens.CurrentRow.DataBoundItem;
+
+                FormWeb frmWeb = new FormWeb(oItem.item_conteudo);
+                frmWeb.ShowDialog();
+            }
         }
     }
 }
