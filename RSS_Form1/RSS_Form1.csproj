@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\CategDados.cs" />
+    <Compile Include="Classes\UtilModelos.cs" />
     <Compile Include="Classes\FeedDados.cs" />
     <Compile Include="Classes\ItemDados.cs" />
     <Compile Include="Form1.cs">
