@@ -57,7 +57,20 @@ namespace RSS_Form1.Classes
                 resFeed = context.Feeds.OrderBy(b => b.feed_ordem).ToList();
             }
 
+            if (resFeed.Count >= 0)
+            {
+                foreach (Feed oF in resFeed)
+                {
+                    oF.Categoria = CategDados.getCategByCodigo(oF.cat_codigo);
+                }
+            }
+
             return resFeed;
+        }
+
+        internal static void Gravar(Feed oFeedTela)
+        {
+            throw new NotImplementedException();
         }
     }
 }

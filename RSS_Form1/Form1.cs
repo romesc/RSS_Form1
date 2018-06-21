@@ -81,7 +81,10 @@ namespace RSS_Form1
 
         private void feedsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormManutFeeds formManutFeed = new FormManutFeeds();
+            formManutFeed.ShowDialog();
 
+            CarregaCategorias();
         }
 
         private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)

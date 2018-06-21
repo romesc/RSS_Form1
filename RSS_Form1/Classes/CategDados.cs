@@ -1,6 +1,7 @@
 ﻿using RSS_Form1.Modelos;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,6 +79,18 @@ namespace RSS_Form1.Classes
             }
 
             return QtRes;
+        }
+
+        internal static Categoria getCategByCodigo(int cat_codigo)
+        {
+            Categoria resCateg;
+
+            using (var context = new bancoRSS())
+            {
+                resCateg = context.Categorias.Where(b => b.cat_codigo.Equals(cat_codigo)).FirstOrDefault();
+            }
+
+            return resCateg;
         }
     }
 }

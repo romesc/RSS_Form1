@@ -32,19 +32,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCateg = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ttbOrdem = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ttbDescricao = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.ttbCodigo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnIncluir = new System.Windows.Forms.Button();
             this.BtnFechar = new System.Windows.Forms.Button();
             this.BtnAlterar = new System.Windows.Forms.Button();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnSalvar = new System.Windows.Forms.Button();
-            this.ttbCodigo = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ttbDescricao = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ttbOrdem = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.catcodigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catdescricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.catordemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCateg)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaGategoriasBS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +62,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
             this.panel1.Size = new System.Drawing.Size(897, 490);
@@ -86,7 +84,7 @@
             this.dgvCateg.DataSource = this.ListaGategoriasBS;
             this.dgvCateg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCateg.Location = new System.Drawing.Point(13, 12);
-            this.dgvCateg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCateg.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCateg.Name = "dgvCateg";
             this.dgvCateg.ReadOnly = true;
             this.dgvCateg.RowHeadersVisible = false;
@@ -108,11 +106,65 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.Location = new System.Drawing.Point(13, 362);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(20);
             this.panel2.Size = new System.Drawing.Size(871, 116);
             this.panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(571, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Ordem:";
+            // 
+            // ttbOrdem
+            // 
+            this.ttbOrdem.Enabled = false;
+            this.ttbOrdem.Location = new System.Drawing.Point(576, 49);
+            this.ttbOrdem.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbOrdem.Name = "ttbOrdem";
+            this.ttbOrdem.Size = new System.Drawing.Size(73, 30);
+            this.ttbOrdem.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(110, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Descrição:";
+            // 
+            // ttbDescricao
+            // 
+            this.ttbDescricao.Enabled = false;
+            this.ttbDescricao.Location = new System.Drawing.Point(112, 49);
+            this.ttbDescricao.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbDescricao.Name = "ttbDescricao";
+            this.ttbDescricao.Size = new System.Drawing.Size(456, 30);
+            this.ttbDescricao.TabIndex = 2;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(23, 20);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(81, 25);
+            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.Text = "Código:";
+            // 
+            // ttbCodigo
+            // 
+            this.ttbCodigo.Enabled = false;
+            this.ttbCodigo.Location = new System.Drawing.Point(24, 49);
+            this.ttbCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.ttbCodigo.Name = "ttbCodigo";
+            this.ttbCodigo.Size = new System.Drawing.Size(80, 30);
+            this.ttbCodigo.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -135,7 +187,7 @@
             this.tableLayoutPanel1.Controls.Add(this.BtnSalvar, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 490);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -146,7 +198,7 @@
             // 
             this.BtnIncluir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnIncluir.Location = new System.Drawing.Point(4, 4);
-            this.BtnIncluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnIncluir.Margin = new System.Windows.Forms.Padding(4);
             this.BtnIncluir.Name = "BtnIncluir";
             this.BtnIncluir.Size = new System.Drawing.Size(81, 56);
             this.BtnIncluir.TabIndex = 0;
@@ -158,7 +210,7 @@
             // 
             this.BtnFechar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnFechar.Location = new System.Drawing.Point(805, 4);
-            this.BtnFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnFechar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnFechar.Name = "BtnFechar";
             this.BtnFechar.Size = new System.Drawing.Size(88, 56);
             this.BtnFechar.TabIndex = 1;
@@ -170,7 +222,7 @@
             // 
             this.BtnAlterar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnAlterar.Location = new System.Drawing.Point(93, 4);
-            this.BtnAlterar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnAlterar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAlterar.Name = "BtnAlterar";
             this.BtnAlterar.Size = new System.Drawing.Size(81, 56);
             this.BtnAlterar.TabIndex = 2;
@@ -183,7 +235,7 @@
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancelar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnCancelar.Location = new System.Drawing.Point(271, 4);
-            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(81, 56);
             this.BtnCancelar.TabIndex = 3;
@@ -195,67 +247,13 @@
             // 
             this.BtnSalvar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnSalvar.Location = new System.Drawing.Point(182, 4);
-            this.BtnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSalvar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnSalvar.Name = "BtnSalvar";
             this.BtnSalvar.Size = new System.Drawing.Size(81, 56);
             this.BtnSalvar.TabIndex = 4;
             this.BtnSalvar.Text = "Salvar";
             this.BtnSalvar.UseVisualStyleBackColor = true;
             this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
-            // 
-            // ttbCodigo
-            // 
-            this.ttbCodigo.Enabled = false;
-            this.ttbCodigo.Location = new System.Drawing.Point(24, 49);
-            this.ttbCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ttbCodigo.Name = "ttbCodigo";
-            this.ttbCodigo.Size = new System.Drawing.Size(80, 30);
-            this.ttbCodigo.TabIndex = 0;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(23, 20);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(81, 25);
-            this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Código:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Descrição:";
-            // 
-            // ttbDescricao
-            // 
-            this.ttbDescricao.Enabled = false;
-            this.ttbDescricao.Location = new System.Drawing.Point(112, 49);
-            this.ttbDescricao.Margin = new System.Windows.Forms.Padding(4);
-            this.ttbDescricao.Name = "ttbDescricao";
-            this.ttbDescricao.Size = new System.Drawing.Size(456, 30);
-            this.ttbDescricao.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(571, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Ordem:";
-            // 
-            // ttbOrdem
-            // 
-            this.ttbOrdem.Enabled = false;
-            this.ttbOrdem.Location = new System.Drawing.Point(576, 49);
-            this.ttbOrdem.Margin = new System.Windows.Forms.Padding(4);
-            this.ttbOrdem.Name = "ttbOrdem";
-            this.ttbOrdem.Size = new System.Drawing.Size(73, 30);
-            this.ttbOrdem.TabIndex = 4;
             // 
             // catcodigoDataGridViewTextBoxColumn
             // 
@@ -308,7 +306,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormManutCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Manutenção Categorias";
@@ -318,7 +316,6 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ListaGategoriasBS)).EndInit();
             this.ResumeLayout(false);
 
@@ -346,6 +343,5 @@
         private System.Windows.Forms.TextBox ttbCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox ttbOrdem;
-        private System.Windows.Forms.BindingSource bindingSource1;
     }
 }
