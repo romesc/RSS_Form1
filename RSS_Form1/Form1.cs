@@ -24,7 +24,7 @@ namespace RSS_Form1
         private void CarregaFeeds()
         {
             var reader = new FeedReader();
-            var items = reader.RetrieveFeed("https://stackoverflow.com/feeds/question/42210281");
+            var items = reader.RetrieveFeed("http://adultboard.net/forums/softcore-photos.7/index.rss");
 
             List<Item> oItens = new List<Item>();
 
@@ -107,7 +107,7 @@ namespace RSS_Form1
             {
                 Item oItem = (Item)dgvItens.CurrentRow.DataBoundItem;
 
-                FormWeb frmWeb = new FormWeb(oItem.item_conteudo);
+                FormWeb frmWeb = new FormWeb(oItem.item_url);
                 frmWeb.ShowDialog();
             }
         }
