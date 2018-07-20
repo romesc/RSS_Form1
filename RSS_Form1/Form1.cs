@@ -24,7 +24,7 @@ namespace RSS_Form1
         private void CarregaFeeds()
         {
             var reader = new FeedReader();
-            var items = reader.RetrieveFeed("http://adultboard.net/forums/softcore-photos.7/index.rss");
+            var items = reader.RetrieveFeed("https://jovemnerd.com.br/feed/");
 
             List<Item> oItens = new List<Item>();
 
